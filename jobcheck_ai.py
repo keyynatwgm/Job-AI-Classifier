@@ -28,9 +28,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from keras.models import load_model as load_keras_model
-import keras
-st.write("TensorFlow:", tf.__version__)
-st.write("Keras:", keras.__version__)
 
 # Config Halaman
 st.set_page_config(page_title="JobCheck AI", layout="wide")
@@ -145,7 +142,7 @@ def load_essentials():
     except Exception:
         tokenizer, bert_model, device = None, None, None
     try:
-        model_path= f"models/{MODEL_ID}.h5"
+        model_path= f"models/{MODEL_ID}.keras"
         print("Loading:", model_path)
         mlp_model = load_keras_model(model_path, compile=False)
         print("Model berhasil di-load")
