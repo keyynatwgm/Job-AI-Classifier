@@ -8,7 +8,7 @@ This project is part of my undergraduate thesis:
 
 > **Klasifikasi Pekerjaan di Indonesia yang Terpengaruh oleh Teknologi Artificial Intelligence Berdasarkan Occupational Exposure Score Menggunakan IndoBERT**
 
-The application predicts whether a job belongs to **High AI Exposure** or **Low AI Exposure** based on the job title and job tasks.
+The application predicts whether a job belongs to **Terotomatisasi AI** or **Tidak Terotomatisasi AI** based on the job title and job tasks.
 
 ## ✨ Features
 
@@ -38,13 +38,14 @@ The application predicts whether a job belongs to **High AI Exposure** or **Low 
 ```
 Job-AI-Classifier/
 │
-├── app.py
-├── requirements.txt
+├── data/
+├── models/
 ├── models/
 ├── results/
-├── assets/
 ├── testing/
-├── utils/
+├── jobcheck_ai.py
+├── M16_801010_CLS_tesLR
+├── requirements.txt
 └── README.md
 ```
 
@@ -85,16 +86,15 @@ pip install -r requirements.txt
 Run the application
 
 ```bash
-streamlit run app.py
+streamlit run jobcheck_ai.py
 ```
 
 ## 📊 Model
 
-- Base Model: IndoBERT (`indobenchmark/indobert-base-p1`)
-- Fine-Tuning for binary classification
+- Base Model: Pretrained IndoBERT (`indobenchmark/indobert-base-p1`)
 - Labels:
-  - Low AI Exposure
-  - High AI Exposure
+  - Terotomatisasi AI
+  - Tidak Terotomatisasi AI
 
 ## 📁 Dataset
 
