@@ -343,7 +343,7 @@ if st.session_state.page == "Landing Page":
             
     with card_col2:
         try:
-            st.image(r"D:\data kuliah\semester 8-9\skripsi\pro\logo.jpg", use_container_width=True)
+            st.image(r"logo.jpg", use_container_width=True)
         except:
             st.info("Logo tidak ditemukan")
             
