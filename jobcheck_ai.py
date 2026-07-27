@@ -142,8 +142,13 @@ def load_essentials():
     except Exception:
         tokenizer, bert_model, device = None, None, None
     try:
-        mlp_model = load_keras_model(f'models/{MODEL_ID}.h5', compile=False)
-    except Exception:
+        model_path= f"models/{MODEL_ID}.h5"
+        print("Loading:", model_path)
+        mlp_model = load_keras_model(model_path, compile=False)
+        print("Model berhasil di-load")
+    except Exception as e:
+        print(e)
+        st.error(e)
         mlp_model = None
     try:
         threshold_data = np.load(f'models/best_threshold_{MODEL_ID}.npy')
