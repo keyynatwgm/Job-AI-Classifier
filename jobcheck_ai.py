@@ -28,6 +28,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from keras.models import load_model as load_keras_model
+import keras
 st.write("TensorFlow:", tf.__version__)
 st.write("Keras:", keras.__version__)
 
