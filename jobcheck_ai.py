@@ -132,7 +132,7 @@ st.markdown("""
 
 @st.cache_resource  
 def load_essentials():
-    MODEL_ID = "M16_801010_CLS_tesLR" 
+    MODEL_ID = "M16_801010_CLS_tesLR_fixed" 
     try:
         tokenizer = AutoTokenizer.from_pretrained("indobenchmark/indobert-base-p1")
         bert_model = AutoModel.from_pretrained("indobenchmark/indobert-base-p1")
@@ -142,13 +142,8 @@ def load_essentials():
     except Exception:
         tokenizer, bert_model, device = None, None, None
     try:
-        model_path= f"models/{MODEL_ID}.keras"
-        print("Loading:", model_path)
-        mlp_model = load_keras_model(model_path, compile=False)
-        print("Model berhasil di-load")
-    except Exception as e:
-        print(e)
-        st.error(e)
+        mlp_model = load_keras_model(f'models/{MODEL_ID}.h5', compile=False)
+    except Exception:
         mlp_model = None
     try:
         threshold_data = np.load(f'models/best_threshold_{MODEL_ID}.npy')
